@@ -1,0 +1,24 @@
+.add-btn{
+        width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-btn button{
+    width: 202px;
+    padding: 0;
+    height: 30px;
+    margin: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: chocolate;
+    color: white;
+    box-shadow: none;
+    border: none;
+}
+
+.add-btn button:hover{
+    opacity: 0.9;
+}

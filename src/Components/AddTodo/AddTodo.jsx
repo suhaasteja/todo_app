@@ -1,12 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './AddTodo.css'
 
 export const AddTodo = ({handleAddTodo, editTodo}) => {
   return (
-    <div>
-        <button onClick={() => handleAddTodo()}
-        style={{
-            width: '150px'
-        }}>{editTodo ? 'Edit' : 'Add'}</button>
+    <div className='add-btn'>
+        <button onClick={() => handleAddTodo()}>{editTodo ? 'Edit' : 'Add'}</button>
     </div>
   )
 }

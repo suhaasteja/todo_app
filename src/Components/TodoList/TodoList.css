@@ -1,0 +1,38 @@
+.todo-list{
+        width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+}
+
+.todo-item{        
+    width: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    padding: 20px;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 4px;
+}
+
+
+.todos-container{
+    width: 700px;
+    padding: 0;
+    margin: 20px auto;
+}
+
+#delete-btn{
+    background: crimson;
+}
+
+#edit-btn{
+    background: navy;
+}
+
+#strike-btn{
+    background-color: cadetblue;
+}

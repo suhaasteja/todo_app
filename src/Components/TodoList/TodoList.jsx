@@ -3,17 +3,11 @@ import './TodoList.css';
 
 export const TodoList = ({todoList, handleDeleteTodo, handleEditTodo, handleCompeletedTodo}) => {
     return (
-    <div>
-        <ul>
+    <div className='todo-list'>
+        <ul className='todos-container'>
             {todoList.map((todo, index) => {
                 return (
-                    <li style={{
-                        width: '50%',
-                        margin: '0 auto',
-                        'display': 'flex',
-                        'justifyContent': 'space-around',
-                        'alignItems': 'center',
-                    }}
+                    <li className='todo-item'
                     key={index}>
                         <span style={{
                             textDecoration: todo.strike ? 'line-through' : ''
@@ -22,13 +16,13 @@ export const TodoList = ({todoList, handleDeleteTodo, handleEditTodo, handleComp
                         </span>
                         <div>
                             <span>
-                                <button onClick={() => handleEditTodo(index)}>Edit</button>
+                                <button onClick={() => handleEditTodo(index)} id="edit-btn">Edit</button>
                             </span>
                             <span>
-                                <button onClick={() => handleDeleteTodo(index)}>Delete</button>
+                                <button onClick={() => handleDeleteTodo(index)} id="delete-btn">Delete</button>
                             </span>
                             <span>
-                                <button onClick={() => handleCompeletedTodo(index)}>{!todo.strike ? 'Strike' : 'Un-Strike'}</button>
+                                <button onClick={() => handleCompeletedTodo(index)} id="strike-btn">{!todo.strike ? 'Strike' : 'Un-Strike'}</button>
                             </span>
                         </div>
                     </li>

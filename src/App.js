@@ -60,6 +60,8 @@ function App() {
       let newTodoList = prev.filter(todo => prev.indexOf(todo) !== index);
       return newTodoList;
     })
+    setEditTodo(false);
+
   } 
 
   const handleEditTodo = (index) => {
