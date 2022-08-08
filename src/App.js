@@ -8,7 +8,10 @@ import { TodoList } from './Components/TodoList/TodoList';
 
 
 function App() {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState({
+    todo: '',
+    strike: false
+  });
   const [todoList, setTodoList] = useState([]);
   const [editTodo, setEditTodo] = useState(false);
   const [todoEditIndex, setTodoEditIndex] = useState(0);
@@ -26,14 +29,17 @@ function App() {
 
 
   const handleInputChange = (e) => {
-    setInput(e)
+    setInput({
+      ...input,
+      todo: e
+    })
   };
 
   const handleAddTodo = () => {
-    if(input.trim()){
+    if(input.todo.trim()){
       if(editTodo){
         setTodoList(prev => {
-          prev[todoEditIndex] = input;
+          prev[todoEditIndex].todo = input.todo;
           return [...prev];
         })      
       }
@@ -42,7 +48,10 @@ function App() {
       }
       
       setEditTodo(false);
-      setInput('');
+      setInput({
+        todo: '',
+        strike: false
+      });
     }
   }
 
@@ -60,7 +69,10 @@ function App() {
   }
 
   const handleCompeletedTodo = (index) => {
-    
+    setTodoList(prev => {
+      prev[index].strike = !prev[index].strike;
+      return [...prev];
+    })
   }
 
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 import './TodoList.css';
 
 export const TodoList = ({todoList, handleDeleteTodo, handleEditTodo, handleCompeletedTodo}) => {
-  return (
+    return (
     <div>
         <ul>
             {todoList.map((todo, index) => {
@@ -15,7 +15,11 @@ export const TodoList = ({todoList, handleDeleteTodo, handleEditTodo, handleComp
                         'alignItems': 'center',
                     }}
                     key={index}>
-                        {todo}
+                        <span style={{
+                            textDecoration: todo.strike ? 'line-through' : ''
+                        }}>
+                            {todo.todo}
+                        </span>
                         <div>
                             <span>
                                 <button onClick={() => handleEditTodo(index)}>Edit</button>
@@ -24,7 +28,7 @@ export const TodoList = ({todoList, handleDeleteTodo, handleEditTodo, handleComp
                                 <button onClick={() => handleDeleteTodo(index)}>Delete</button>
                             </span>
                             <span>
-                                {/* <button onClick={() => handleCompeletedTodo(index)}>Strike</button> */}
+                                <button onClick={() => handleCompeletedTodo(index)}>{!todo.strike ? 'Strike' : 'Un-Strike'}</button>
                             </span>
                         </div>
                     </li>
