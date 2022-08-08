@@ -15,7 +15,7 @@
     padding: 20px;
     font-weight: bold;
     border: 1px solid;
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 
@@ -35,4 +35,14 @@
 
 #strike-btn{
     background-color: cadetblue;
+}
+
+
+@media screen and (max-width: 700px ){
+    .todos-container{
+        width: 100%;
+    }
+    .todo-item{
+        width: 80%;
+    }
 }
